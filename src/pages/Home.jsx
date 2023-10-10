@@ -12,7 +12,7 @@ const Section = (props) => {
 	);
 };
 
-export const Interface = (props) => {
+export const Home = (props) => {
 	const { setSection } = props;
 	return (
 		<div className="flex flex-col items-center ">
@@ -27,16 +27,20 @@ const HomeSection = (props) => {
 		<Section>
 			<>
 				<h1 className="text-4xl md:text-8xl  text-gray-300 font-extrabold ">
-					Explore
-					<br />
-					<span className="text-transparent bg-gradient-to-r from-[#14595e]  to-[#07dabd] bg-clip-text">
-						NFT Art Trading
-					</span>
+					<div className="flex gap-5">
+						All
+						<p className="rotate-words">
+							<span className="grid text-transparent bg-gradient-to-r from-[#14595e]  to-[#07dabd] bg-clip-text">
+								NFTs
+								<br />
+								Chain
+							</span>
+						</p>
+					</div>
+					One Platform
 				</h1>
-				<p className="text-sm pt-5 leading-snug text-gray-300 w-[45%]">
-					NFT art trading involves the buying and selling of unique didgital
-					artworks that are authenticated and verified using blockchain
-					technology.
+				<p className="text-base pt-5 leading-snug text-gray-300 ">
+					Create, buy, sell, swap and earn NFTs
 				</p>
 			</>
 		</Section>
