@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root {
-	background-color: #0b1111;
+	background-color: rgb(10, 10, 10);
 	font-family: "Montserrat", sans-serif;
 }
 
-.rotate-words {
+.words-animation {
 	border: 0px solid #ddd;
 	height: 100px;
 	line-height: 100px;
@@ -17,12 +17,12 @@
 	overflow: hidden;
 }
 
-.rotate-words span {
+.words-animation span {
 	position: relative;
-	animation: flip 5s ease infinite;
+	animation: flipUp 5s ease infinite;
 }
 
-@keyframes flip {
+@keyframes flipUp {
 	0%,
 	100% {
 		top: 0;

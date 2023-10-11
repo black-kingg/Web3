@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { navigation } from "../config";
 
+import { GiAtlas } from "react-icons/gi";
+import "animate.css";
+
 export const Nav = (props) => {
 	return (
 		<>
@@ -8,9 +11,12 @@ export const Nav = (props) => {
 				<div className=" flex pl-8 pr-20 py-4 m-auto place-content-between  transition-all overflow-hidden">
 					<Link
 						to="/"
-						className="text-gray-100 text-5xl"
+						className="animate__animated animate__pulse animate__infinite	infinite"
 					>
-						Logo
+						<GiAtlas
+							size={60}
+							color="#07dabd"
+						/>
 					</Link>
 
 					<div className="text-gray-300  flex gap-6">
