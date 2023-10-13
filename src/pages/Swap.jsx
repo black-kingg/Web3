@@ -32,7 +32,7 @@ export const Swap = () => {
 	return (
 		<>
 			<SwapNav />
-			<div className="h-screen w-screen pl-20 mx-auto flex flex-col items-start justify-center">
+			<div className="h-screen w-full pl-20 mx-auto flex flex-col items-start justify-center">
 				<h1 className="text-9xl text-[#44db37]">Swap</h1>
 			</div>
 		</>
