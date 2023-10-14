@@ -40,7 +40,7 @@ const HomeSection = () => {
 				<div className="flex gap-5">
 					All
 					<p className="words-animation">
-						<span className="grid text-transparent bg-gradient-to-r from-[#14595e] to-[#07dabd] bg-clip-text">
+						<span className="grid text-transparent bg-gradient-to-r from-[#14595e] to-[#07dabd]  bg-clip-text">
 							NFTs
 							<br />
 							Chain
@@ -63,9 +63,12 @@ const DocsSection = () => {
 				{contentConfig.map((item, index) => (
 					<div
 						key={index}
-						className="text-gray-300 w-2/3 flex flex-col gap-2 items-center justify-center"
+						className="text-gray-300 w-2/3 flex flex-col gap-5 items-center justify-center"
 					>
-						{item.icon}
+						<item.icon
+							size={80}
+							color="#1e776b"
+						/>
 						<div className="border-t border-gray-400 flex flex-col gap-5 pt-4">
 							<h1 className="text-3xl font-bold">{item.title}</h1>
 							<p className="text-sm">{item.description}</p>
