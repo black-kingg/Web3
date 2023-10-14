@@ -5,7 +5,27 @@
 @tailwind utilities;
 
 :root {
-	background-color: #0a0a0a;
+	background: hsla(174, 19%, 11%, 1);
+
+	background: linear-gradient(
+		0deg,
+		hsla(174, 19%, 11%, 1) 0%,
+		hsla(174, 19%, 11%, 1) 100%
+	);
+
+	background: -moz-linear-gradient(
+		0deg,
+		hsla(174, 19%, 11%, 1) 0%,
+		hsla(174, 19%, 11%, 1) 100%
+	);
+
+	background: -webkit-linear-gradient(
+		0deg,
+		hsla(174, 19%, 11%, 1) 0%,
+		hsla(174, 19%, 11%, 1) 100%
+	);
+
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#16201F", endColorstr="#16201F", GradientType=1 );
 	font-family: "Montserrat", sans-serif;
 }
 

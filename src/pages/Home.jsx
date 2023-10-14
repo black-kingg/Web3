@@ -1,16 +1,19 @@
+import React from "react";
+
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { GiMultipleTargets } from "react-icons/gi";
 import { TbLockAccessOff } from "react-icons/tb";
 import { BsCheck2Circle } from "react-icons/bs";
 
-import { aboutConfig, contentConfig } from "../config";
+import { aboutConfig, contentConfig, governConfig } from "../config";
+
 const Section = (props) => {
 	const { children } = props;
 
 	return (
 		<section
 			className={`
-      h-screen w-full ml-5 p-8 max-w-full-2xl mx-auto flex flex-col items-start justify-center
+     h-screen w-full p-8 max-w-full-2xl mx-auto flex flex-col justify-center
     `}
 		>
 			{children}
@@ -25,6 +28,7 @@ export const Home = (props) => {
 			<HomeSection setSection={setSection} />
 			<DocsSection />
 			<AboutSection />
+			<GovSection />
 		</div>
 	);
 };
@@ -61,24 +65,7 @@ const DocsSection = () => {
 						key={index}
 						className="text-gray-300 w-2/3 flex flex-col gap-2 items-center justify-center"
 					>
-						{item.icon === "BsFillShieldLockFill" && (
-							<BsFillShieldLockFill
-								size={100}
-								color="#07dabd"
-							/>
-						)}
-						{item.icon === "GiMultipleTargets" && (
-							<GiMultipleTargets
-								size={100}
-								color="#07dabd"
-							/>
-						)}
-						{item.icon === "TbLockAccessOff" && (
-							<TbLockAccessOff
-								size={100}
-								color="#07dabd"
-							/>
-						)}
+						{item.icon}
 						<div className="border-t border-gray-400 flex flex-col gap-5 pt-4">
 							<h1 className="text-3xl font-bold">{item.title}</h1>
 							<p className="text-sm">{item.description}</p>
@@ -95,26 +82,51 @@ const AboutSection = () => {
 		<Section>
 			<div className="text-gray-300">
 				<div className="mt-8">
-					<h2 className="text-3xl md:text-5xl font-bold ">
+					<h2 className="text-[2.7rem] font-bold ">
 						The Future of NFT Trading
 					</h2>
-					{aboutConfig.map((item, index) => (
-						<>
+					<div className="">
+						{aboutConfig.map((item, index) => (
 							<div key={index}>
-								<div className="w-4/12 mt-5 py-8 px-2 border-t border-gray-400">
+								<div className="w-7/12 mt-5 py-5 px-2 border-t border-gray-400">
 									<div className="flex space-x-5">
-										<BsCheck2Circle size={60} />
+										<BsCheck2Circle size={70} />
 										<div className="space-y-3">
-											<p className="text-lg md:text-2xl font-bold">
-												{item.title}
-											</p>
-											<p>{item.message}</p>
+											<p className="text-xl font-bold">{item.title}</p>
+											<p className="text-sm">{item.message}</p>
 										</div>
 									</div>
 								</div>
 							</div>
-						</>
-					))}
+						))}
+					</div>
+				</div>
+			</div>
+		</Section>
+	);
+};
+
+const GovSection = () => {
+	return (
+		<Section className="mx-auto items-center">
+			<div className="text-gray-300">
+				<div className="mt-8">
+					<h2 className="text-[2.7rem] font-bold text-center">
+						Governance: Definition and Importance
+					</h2>
+					<div className="">
+						{governConfig.map((item, index) => (
+							<div key={index}>
+								<div className=" mt-5 py-5 px-2 ">
+									<div className="flex space-x-20 items-center mt-5 py-5 px-2">
+										<BsCheck2Circle size={70} />
+										<p className="text-2xl font-bold">{item.title}</p>
+										<p className="text-base w-7/12 ">{item.message}</p>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</Section>

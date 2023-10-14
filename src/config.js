@@ -1,26 +1,13 @@
+import { BsFillShieldLockFill } from "react-icons/bs";
+import { GiMultipleTargets } from "react-icons/gi";
+import { TbLockAccessOff } from "react-icons/tb";
+
 export const navigation = [
 	{ label: "Marketplace", href: "/marketplace" },
 	{ label: "Rankings", href: "/rankings" },
 	{ label: "Resources", href: "/resources" },
 	{ label: "Docs", href: "/docs" },
 ];
-
-export const aboutConfig = [
-	{
-		title: "Hey",
-		message:
-			"Multi-Asset NFT trading is expected to become more common in the future, allowing for the creation of more complex and diverse digital assets.",
-	},
-	{
-		head: "Hey",
-		message:
-			"Multi-Asset NFT trading is expected to become more common in the future, allowing for the creation of more complex and diverse digital assets.",
-	},
-];
-
-import { BsFillShieldLockFill } from "react-icons/bs";
-import { GiMultipleTargets } from "react-icons/gi";
-import { TbLockAccessOff } from "react-icons/tb";
 
 export const contentConfig = [
 	{
@@ -40,5 +27,41 @@ export const contentConfig = [
 		title: "Censorship Restraint",
 		description:
 			"Censorship restraint is the practice of exercising moderation and discretion when implementing content restrictions or limitations to preserve freedom.",
+	},
+];
+
+export const aboutConfig = [
+	{
+		title: "Data Analysis with problem factor",
+		message:
+			"Multi-Asset NFT trading is expected to become more common in the future, allowing for the creation.",
+	},
+	{
+		title: "Functionality solution for users",
+		message:
+			"Multi-Asset NFT trading is expected to become more common in the future, allowing for the creation.",
+	},
+	{
+		title: "Latest technology enabled",
+		message:
+			"Multi-Asset NFT trading is expected to become more common in the future, allowing for the creation.",
+	},
+];
+
+export const governConfig = [
+	{
+		title: "$NFT Token",
+		message:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem distinctio officia nostrum voluptas architecto quo possimus.",
+	},
+	{
+		title: "Community",
+		message:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem distinctio officia nostrum voluptas architecto quo possimus.",
+	},
+	{
+		title: "Foundation",
+		message:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem distinctio officia nostrum voluptas architecto quo possimus.",
 	},
 ];
