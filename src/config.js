@@ -1,6 +1,9 @@
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { GiMultipleTargets } from "react-icons/gi";
 import { TbLockAccessOff } from "react-icons/tb";
+import { CgCommunity } from "react-icons/cg";
+import { MdToken, MdFoundation } from "react-icons/md";
+import { SiLinuxfoundation } from "react-icons/si";
 
 export const navigation = [
 	{ label: "Marketplace", href: "/marketplace" },
@@ -50,16 +53,19 @@ export const aboutConfig = [
 
 export const governConfig = [
 	{
+		icon: MdToken,
 		title: "$NFT Token",
 		message:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem distinctio officia nostrum voluptas architecto quo possimus.",
 	},
 	{
+		icon: CgCommunity,
 		title: "Community",
 		message:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem distinctio officia nostrum voluptas architecto quo possimus.",
 	},
 	{
+		icon: MdFoundation,
 		title: "Foundation",
 		message:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem distinctio officia nostrum voluptas architecto quo possimus.",

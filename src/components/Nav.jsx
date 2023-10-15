@@ -11,11 +11,11 @@ export const Nav = (props) => {
 		>
 			<div className="bg-[#0b1111] bg-opacity-90 border-b border-gray-400">
 				<div className="flex pl-8 pr-20 py-4 m-auto place-content-between">
-					<Link to="/">
-						<GiAtlas
-							size={60}
-							color="#07dabd"
-						/>
+					<Link
+						to="/"
+						className="text-5xl text-white"
+					>
+						LOGO
 					</Link>
 
 					<div className="text-gray-300 space-x-8">
