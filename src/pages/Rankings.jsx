@@ -4,27 +4,45 @@ import altImage from "../assets/404_not_found.png";
 
 const OpenSeaAPIKey = "94bf65e87c4d41af96367b3d0272e6c3";
 
+const CACHE_KEY = "nftDataCache";
+const CACHE_EXPIRATION = 60 * 60 * 1000;
+
 export const Rankings = () => {
 	const [nftData, setNFTData] = useState(null);
 
 	useEffect(() => {
-		const customHeaders = {
-			"X-API-KEY": OpenSeaAPIKey,
-		};
-		const axiosConfig = {
-			headers: customHeaders,
-			params: {},
-		};
+		const cachedData = JSON.parse(localStorage.getItem(CACHE_KEY));
 
-		axios
-			.get(`https://api.opensea.io/api/v1/assets`, axiosConfig)
-			.then((response) => {
-				console.log(response.data.assets);
-				setNFTData(response.data.assets);
-			})
-			.catch((error) => {
-				console.error("Error fetching NFT data:", error);
-			});
+		if (cachedData && Date.now() - cachedData.timestamp < CACHE_EXPIRATION) {
+			setNFTData(cachedData.data);
+		} else {
+			const customHeaders = {
+				"X-API-KEY": OpenSeaAPIKey,
+			};
+			const axiosConfig = {
+				headers: customHeaders,
+				params: {},
+			};
+
+			axios
+				.get(`https://api.opensea.io/api/v1/assets`, axiosConfig)
+				.then((response) => {
+					const newData = response.data.assets;
+					console.log(newData);
+
+					setNFTData(newData);
+
+					// Store the new data in cache
+					const cacheData = {
+						data: newData,
+						timestamp: Date.now(),
+					};
+					localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+				})
+				.catch((error) => {
+					console.error("Error fetching NFT data:", error);
+				});
+		}
 	}, []);
 
 	return (
@@ -41,20 +59,25 @@ export const Rankings = () => {
 								className="h-[30rem] overflow-hidden border border-gray-200 flex flex-col space-x-5 mt-5 p-4 rounded-md"
 							>
 								<img
-									className="h-3/4 object-cover"
+									className="h-3/4 object-cover "
 									src={nft.image_preview_url}
 									onError={(e) => {
 										e.target.src = altImage;
 									}}
 								/>
-								<div className="mt-2">
+								<div className="mt-2 ">
 									<h2 className="text-lg text-gray-100 font-semibold mt-2">
 										{nft.name}
 									</h2>
 									<h2 className="text-lg text-gray-300 font-semibold mt-2">
 										{nft.collection.name}
 									</h2>
-									<p className="text-sm text-gray-300 mt-1"></p>
+									<p className="text-sm italic text-gray-400 mt-1 flex flex-row gap-2">
+										Chain:
+										<span className="text-gray-500">
+											{nft.asset_contract.chain_identifier}
+										</span>
+									</p>
 								</div>
 							</div>
 						))}
