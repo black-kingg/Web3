@@ -5,7 +5,7 @@ import altImage from "../assets/404_not_found.png";
 const OpenSeaAPIKey = "94bf65e87c4d41af96367b3d0272e6c3";
 
 const CACHE_KEY = "nftDataCache";
-const CACHE_EXPIRATION = 60 * 60 * 1000;
+const CACHE_EXPIRATION = 10 * 60 * 1000;
 
 export const Rankings = () => {
 	const [nftData, setNFTData] = useState(null);
